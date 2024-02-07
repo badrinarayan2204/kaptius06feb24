@@ -6,120 +6,11 @@
     <title>Calculator using HTML Example</title>  
 
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">  
-
-    <style>  
-        body {    
-            background-color: rgb(244, 243, 243);    
-        }    
-        .box {    
-            background-color: #f4ac12;    
-            height: 300px;    
-            width: 270px;    
-            border-radius: 10px;    
-            position: relative;    
-            top: 80px;    
-            left: 40%; 
-            bottom: 40px;      
-        }
-        .display {
-            margin-top: 20px;
-        }
-        .display input {    
-            position: relative;    
-            left: 2px;    
-            top: 2px;    
-            height: 35px;    
-            color: black;    
-            background-color: #bccd95;    
-            font-size: 21px;    
-            text-align: right;  
-            margin-top: 15px;
-            margin-left: 5px;  
-        }   
-        .keys {    
-            position: relative;    
-            top: -10px; 
-            bottom: 40px;   
-        }    
-        .button {    
-            width: 40px;    
-            height: 30px;    
-            border: none;    
-            border-radius: 8px;    
-            margin-left: 17px;    
-            cursor: pointer;    
-            border-top: 2px solid transparent;    
-        }    
-        .button.gray {    
-            color: rgb(242, 244, 245);    
-            background-color: #201d3b;    
-            border-bottom: rgb(115, 10, 10) 2px solid;    
-            border-top: 2px #bda2b7 solid;    
-        }  
-        .title:hover {  
-            color: #fcfafa;  
-        }  
-        .title {  
-            margin-bottom: 10px;  
-            margin-top: 30px;  
-            padding: 5px 0;  
-            font-size: 40px;  
-            font-weight: bold;  
-            text-align: center;  
-            color: black;  
-            font-family: 'Cookie', cursive;  
-        }
-        .button.pink {    
-            color: black;    
-            background-color: #884df6;    
-            border-bottom: black 2px solid;    
-        }    
-        @media (max-width: 600px) {
-            .box {
-                width: 100%;
-                left: 0;
-                top: 0;
-            }
-        }
-        .button.black {    
-            color: rgb(22, 161, 64);    
-            background-color: 303030;    
-            border-bottom: black 2px solid;    
-            border-top: 2px 303030 solid;    
-            font-weight: bold;  
-        }    
-        .button.orange {    
-            color: black;    
-            background-color: FF9933;    
-            border-bottom: black 2px solid;    
-            border-top: 2px FF9933 solid;    
-        }    
-        .gray:active {    
-            border-top: black 2px solid;    
-            border-bottom: 2px #6f6f6f solid;    
-        }    
-        .pink:active {    
-            border-top:black 2px solid;    
-            border-bottom:#ff4561 2px solid;    
-        }    
-        .black:active {    
-            border-top: black 2px solid;    
-            border-bottom: #303030 2px solid;    
-        }    
-        .orange:active {    
-            border-top: black 2px solid;    
-            border-bottom: FF9933 2px solid;    
-        }    
-        p {    
-            line-height: 10px;    
-        }   
-        h4 {
-            text-align: center;
-            margin: 3px;
-        }
-    </style>  
+    <link rel="stylesheet" type="text/css" href="styles.css">
+   
 </head>  
 <body>  
+    
     <div class="box">   
         <div class="display">  
             <input type="text" readonly size="18" id="d" >  
@@ -128,7 +19,7 @@
         <div class="keys">    
             <p>
                 <input type="button" class="button gray" value="DEL" onclick="backspace()">
-                <input type="button" class="button gray" value="sqrt" onclick='c("m-")'>  
+                <input type="button" class="button gray" value="sqrt" onclick='sqrt()'>  
                 <input type="button" class="button gray" value="%" onclick='c("percentage")'>  
                 <input type="button" class="button pink" value="/" onclick='v("/")'>
             </p>    
@@ -158,24 +49,8 @@
             </p>    
         </div>    
     </div>   
-    <script>
-        function c(val) {
-            document.getElementById("d").value = val;    
-        }    
-        function v(val) {
-            document.getElementById("d").value += val;    
-        }    
-        function backspace() {
-            let currentValue = document.getElementById("d").value;
-            document.getElementById("d").value = currentValue.slice(0, -1);
-        }
-        function e() {
-            try {    
-                c(eval(document.getElementById("d").value))    
-            } catch(e) {    
-                c('Error') 
-            }    
-        }
-    </script>
+    
+    
+    <script src="script.js"></script>
 </body>
 </html>
